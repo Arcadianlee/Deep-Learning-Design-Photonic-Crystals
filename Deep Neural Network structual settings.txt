@@ -1,0 +1,19 @@
+Settings for DNNs of route 2 (Q and V trained separately)...
+1. Q's DNN:
+20 3x3 kernels, unit padding, 1x2 avg pooling, BN. 40 3x3 kernels, 1x2 avg pooling, BN. FC1 240 neurons, FC2 120 neurons, FC3 50 neurons.
+
+2. V's DNN:
+20 3x3 kernels, unit padding, 1x2 avg pooling, BN. 40 3x3 kernels, 1x2 avg pooling, BN. FC1 240 neurons, FC2 160 neurons, FC3 100 neurons, FC4 50 neurons. 
+
+
+
+
+Hyperparameters for DNNs of route 2 (Q and V trained separately)...
+
+1. Q's DNN:
+number of epochs = 300, training batch size = 64, test batch size = 100, stochastic gradient descent (SGD) is selected for weight backpropagation with learning rate = 0.01 and momentum = 0.5, and L2 regularization is not added. Shuffle is done at each epoch to increase the randomness of the training data for better generalization capacity [41]. Momentum is used in the SGD optimizer to avoid gradient plateaus or non-optimal solutions [41, 43]. Finally, an adaptive (i.e. decaying) learning rate was employed to gain robustness against gradient noise and generate a smoother convergence [41, 44].
+
+2. V's DNN:
+number of epochs = 300, training batch size = 64, test batch size = 100, stochastic gradient descent (SGD) is selected for weight backpropagation with learning rate = 0.01 and momentum = 0.9, and L2 regularization factor = 0.0005 is added. Shuffle is done at each epoch to increase the randomness of the training data for better generalization capacity [41]. Momentum is used in the SGD optimizer to avoid gradient plateaus or non-optimal solutions [41, 43]. L2 regularization is used in the backpropagation to reduce model overfitting [41]. Finally, an adaptive (i.e. decaying) learning rate was employed to gain robustness against gradient noise and generate a smoother convergence [41, 44].
+
+References are included in the main text. 
